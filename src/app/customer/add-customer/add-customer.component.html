@@ -1,0 +1,53 @@
+<div class='container'>
+  <h1>Add Customer</h1>
+  <form [formGroup]='addCustomer' (ngSubmit)='onSubmit()'>
+    <div class='form-group'>
+      <input class='form-control' placeholder="Enter Email" formControlName='customer_email'>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('customer_email').hasError('required') && !addCustomer.get('customer_email').pristine" >Email is required</label>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('customer_email').hasError('email') && !addCustomer.get('customer_email').pristine" >Email is Invalid</label>
+
+    </div>
+    <div class='form-group'>
+      <input class='form-control' placeholder="Enter Name" formControlName='name'>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('name').hasError('required') && !addCustomer.get('name').pristine" >Name Is require</label>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('name').hasError('maxlength') && !addCustomer.get('name').pristine" >maximum length is 25</label>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('name').hasError('minlength') && !addCustomer.get('name').pristine" >minimum length is 5</label>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('name').hasError('patten') && !addCustomer.get('name').pristine" >Only characters</label>
+
+    </div>
+    <div class='form-group' formGroupName='password_group'>
+      <input class='form-control' placeholder="Enter password" formControlName='password'>
+      <input class='form-control' placeholder="Conform password" formControlName='conform_password'>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('password_group').hasError('sarkhanathi')"  >Both password and confirm password should be same.</label>
+
+    </div>
+    <div class='form-group' >
+      <input class='form-control' placeholder="Phome Number" formControlName='phone_no'>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('phone_no').hasError('required') && !addCustomer.get('phone_no').pristine" >Phone number is required</label>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('phone_no').hasError('maxlingth') && !addCustomer.get('phone_no').pristine" >Max Length is 10</label>
+
+    </div>
+    <div class='form-group'>
+      <input class='form-control' placeholder="Address"formControlName='address'>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('address').hasError('required') && !addCustomer.get('address').pristine" >address number is required</label>
+
+
+    </div>
+    <div class='form-group'>
+      <input class='form-control' placeholder="Pincode"formControlName='pincode'>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('pincode').hasError('required') && !addCustomer.get('pincode').pristine" >Pincode number is required</label>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('pincode').hasError('maxlingth') && !addCustomer.get('pincode').pristine" >Max Length is 6</label>
+
+    </div>
+    <div class='form-group'>
+      <input class='form-control' placeholder="State"formControlName='state'>
+      <label class="alert alert-danger" *ngIf="addCustomer.get('state').hasError('required') && !addCustomer.get('state').pristine" >State number is required</label>
+
+    </div>
+    <button [disabled]="!addCustomer.valid" class='btn btn-primary'type='submit'>
+      <mat-icon>add</mat-icon>Customer
+    </button>
+
+  </form>
+
+</div>

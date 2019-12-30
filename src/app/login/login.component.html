@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <mat-form-field>
+    <input matInput formControlName="customer_email" placeholder="ENTER EMAIL">
+    <label class="alert alert-danger" *ngIf="loginForm.get('customer_email').hasError('required') && !loginForm.get('customer_email').pristine ">Email
+      should not be empty</label>
+    <label class="alert alert-danger" *ngIf="loginForm.get('customer_email').hasError('email') && !loginForm.get('customer_email').pristine ">Invalid
+      Email</label>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input type="password" matInput formControlName="customer_password" placeholder="ENTER PASSWORD">
+    <label class="alert alert-danger"*ngIf="loginForm.get('customer_password').hasError('required') && !loginForm.get('customer_password').pristine ">Email
+      should not be empty</label>
+  </mat-form-field>
+
+  <button type="submit" mat-button color="primary">Login</button>
+</form>
