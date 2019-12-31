@@ -9,7 +9,9 @@ export class RoutingGardService implements CanActivate {
   constructor(private _router: Router) { }
   canActivate(_active: ActivatedRouteSnapshot, _state: RouterStateSnapshot): boolean {
 
-    if (localStorage.getItem('customer_email') != null) {
+
+
+    if (localStorage.getItem('email') != null) {
       return true;
     }
 

@@ -4,6 +4,7 @@ import { customer_class } from './customer_class';
 import { CustomerDataService } from './customer-data.service';
 import { Router } from '@angular/router';
 import { ViewMoreCustomerComponent } from './view-more-customer/view-more-customer.component';
+import { product_class } from '../product/pruduct_class';
 
 @Component({
   selector: 'app-customer',
@@ -44,9 +45,7 @@ export class CustomerComponent implements OnInit {
   deleteCustomer(row) {
     if (confirm("Are you sure?")) {
       this._data.deletecustomer(row.customer_id).subscribe(
-        (data: any) => {
-          console.log(this.temparr);
-          console.log(this.temparr.indexOf(row));
+        (data: product_class[]) => {
           this.temparr.splice(this.temparr.indexOf(row), 1);
           this.dataSource.data = this.temparr;
 

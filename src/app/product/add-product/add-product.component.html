@@ -1,0 +1,45 @@
+<div class='container'>
+  <h1>Add Product</h1>
+  <form [formGroup]='addproduct' (ngSubmit)='onSubmit()'>
+
+    <div class='form-group'>
+      <input class='form-control' placeholder="Enter Name" formControlName='name'>
+      <label class="alert alert-danger" *ngIf="addproduct.get('name').hasError('required') && !addproduct.get('name').pristine" >Name Is require</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('name').hasError('maxlength') && !addproduct.get('name').pristine" >maximum length is 25</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('name').hasError('minlength') && !addproduct.get('name').pristine" >minimum length is 5</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('name').hasError('patten') && !addproduct.get('name').pristine" >Only characters</label>
+
+    </div>
+    <div class='form-group'>
+      <input class='form-control' placeholder="Price" formControlName='price'>
+      <label class="alert alert-danger" *ngIf="addproduct.get('price').hasError('required') && !addproduct.get('price').pristine" >Price Is require</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('price').hasError('patten') && !addproduct.get('price').pristine" >Only Numbers</label>
+
+    </div>
+
+    <div class='form-group' >
+      <input class='form-control' placeholder="Stock" formControlName='stock'>
+      <label class="alert alert-danger" *ngIf="addproduct.get('stock').hasError('required') && !addproduct.get('stock').pristine" >Stock is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('price').hasError('patten') && !addproduct.get('stock').pristine" >Only Numbers</label>
+
+    </div>
+    <div class='form-group' >
+      <input type="date" class='form-control' placeholder="MFG date" formControlName='mfg_date'>
+      <label class="alert alert-danger" *ngIf="addproduct.get('mfg_date').hasError('required') && !addproduct.get('mfg_date').pristine" >mfg date is required</label>
+
+
+    </div>
+     <div class='form-group' >
+      <input class='form-control' placeholder="warranty" formControlName='warranty'>
+      <label class="alert alert-danger" *ngIf="addproduct.get('warranty').hasError('required') && !addproduct.get('warranty').pristine" >Warranty is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('warranty').hasError('patten') && !addproduct.get('warranty').pristine" >Only Numbers</label>
+
+    </div>
+
+    <button [disabled]="!addproduct.valid" class='btn btn-primary'type='submit'>
+      <mat-icon>add</mat-icon>Customer
+    </button>
+
+  </form>
+
+</div>

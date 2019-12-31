@@ -26,7 +26,9 @@ export class LoginComponent implements OnInit {
         (x: customer_class[]) => {
 
           if (x.length == 1) {
-            localStorage.setItem('customer_email', this.loginForm.get('customer_email').value);
+
+            localStorage.setItem('email', this.loginForm.get('customer_email').value);
+
             this._router.navigate(['/nav/customer']);
 
           }

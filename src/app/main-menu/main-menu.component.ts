@@ -14,11 +14,11 @@ export class MainMenuComponent implements OnInit {
       map(result => result.matches),
       shareReplay()
     );
-  customer_email: string = '';
+  email: string = '';
   constructor(private breakpointObserver: BreakpointObserver, private _router: Router) { }
 
   ngOnInit() {
-    this.customer_email = localStorage.getItem('customer_email');
+    this.email = localStorage.getItem('email');
   }
   onLogout() {
     localStorage.clear();

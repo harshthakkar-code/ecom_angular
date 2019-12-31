@@ -14,6 +14,10 @@ import { AddCustomerComponent } from './customer/add-customer/add-customer.compo
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { LoginComponent } from './login/login.component';
 import { ViewMoreCustomerComponent } from './customer/view-more-customer/view-more-customer.component';
+import { ProductComponent } from './product/product.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AddProductComponent } from './product/add-product/add-product.component';
+import { EditProductComponent } from './product/edit-product/edit-product.component';
 
 
 
@@ -26,6 +30,10 @@ import { ViewMoreCustomerComponent } from './customer/view-more-customer/view-mo
     UpdateCustomerComponent,
     LoginComponent,
     ViewMoreCustomerComponent,
+    ProductComponent,
+    PageNotFoundComponent,
+    AddProductComponent,
+    EditProductComponent,
 
 
   ],
